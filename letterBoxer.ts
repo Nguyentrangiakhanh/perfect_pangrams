@@ -5,7 +5,7 @@ const letterSets = process.argv.slice(2).map(s => s.toLowerCase().split(''));
 if (!letterSets.length) process.exit(0);
 const validLetters = letterSets.reduce((a,b) => a.concat(b), []);
 
-let allWords = fs.readFileSync('words.txt').toString().split("\r\n");
+let allWords = fs.readFileSync('Viet22K.txt').toString().split("\r\n");
 
 // search all words
 let words: string[] = [];
@@ -31,7 +31,7 @@ console.log(`${Date.now()-start}ms\t${allWords.length} words loaded. ${words.len
 //console.log(words.join(' '));
 allWords = undefined;
 
-let alphabet = "zqxjkvbpygfwmucldrhsnioate".split('')
+let alphabet = "abcdeghiklmnopqrstuvxyăâêôơưđ".split('')
     .filter(c => validLetters.indexOf(c) >= 0);
 
 // sort the words in groups by starting letter
@@ -93,3 +93,4 @@ if (!found) console.log('no solution found');
 
 // log some stats
 console.log(`${Date.now()-start}ms`);
+
